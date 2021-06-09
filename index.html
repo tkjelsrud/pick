@@ -60,6 +60,26 @@
     
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script type="text/javascript">
+    var urlParams;
+    (window.onpopstate = function () {
+        var match,
+            pl     = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query  = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+           urlParams[decode(match[1])] = decode(match[2]);
+    })();
+    
+    window.onload = function(e) { 
+      if("q" in urlParams)
+      	document.getElementById("labels").value = urlParams["q"];
+      
+      updatePie();
+    }
+    
     function updatePie() {
       let labels = document.getElementById("labels").value.split(/,|;|$/)
       let data = new Array();
