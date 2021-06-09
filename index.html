@@ -2,7 +2,7 @@
 <head>
   <!-- Borrowed code from https://codepen.io/deab/pen/gObXawr -->
   <style>
-    .body {
+    body {
       margin: 0px;
       background-color: blue;
     }
@@ -49,7 +49,10 @@
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       left: 500px;
       top: 200px;
-      font-size: 50px;
+    }
+    #labels {
+      width:300px; 
+      height:100px;
     }
   </style>
 </head>
@@ -57,7 +60,7 @@
 <body>
   
   <div id="title" contentEditable="true">Title here</div>
-  <div id="vList">Enter values (separate by , )<textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
+  <div id="vList"><div class="text">Enter values (separate by , )</div> <textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
   <div id="chart"></div>
     <!--div id="question"><h1></h1></div-->
     
@@ -141,6 +144,7 @@
             });
         container.on("click", spin);
         function spin(d){
+            document.getElementById("vList").style.display = "none";
             
             container.on("click", null);
             //all slices have been seen, all done
