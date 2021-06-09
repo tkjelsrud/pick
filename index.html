@@ -43,7 +43,7 @@
       font-weight: bold;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    #vallist {
+    #vList {
       position: absolute;
       font-size: 11px;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -55,10 +55,11 @@
 </head>
 
 <body>
-  <div id="chart"></div>
+  
   <div id="title" contentEditable="true">Title here</div>
-  <div id="vallist">Enter values (separate by , )<textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
-    <div id="question"><h1></h1></div>
+  <div id="vList">Enter values (separate by , )<textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
+  <div id="chart"></div>
+    <!--div id="question"><h1></h1></div-->
     
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script type="text/javascript">
@@ -175,8 +176,8 @@
                        .attr("strokeStyle", "#990000");
                
                     //populate question
-                    d3.select("#question h1")
-                        .text(data[picked].question);
+                    //d3.select("#question h1")
+                    //    .text(data[picked].question);
                     oldrotation = rotation;
               
                     /* Get the result value from object "data" */
