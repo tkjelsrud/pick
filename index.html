@@ -49,11 +49,16 @@
 <body>
   <div id="chart"></div>
   <div id="title" contentEditable="true">Title here</div>
-  <div id="vallist"><textarea></textarea></div>
+  <div id="vallist">Enter values (separate by , )<textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
     <div id="question"><h1></h1></div>
     
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script type="text/javascript">
+    function updatePie() {
+      let labels = document.getElementById("labels").values();
+      console.log(labels);
+    }
+    
   var padding = {top:20, right:40, bottom:0, left:0},
             w = 500 - padding.left - padding.right,
             h = 500 - padding.top  - padding.bottom,
