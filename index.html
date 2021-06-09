@@ -148,9 +148,9 @@
             
             container.on("click", null);
             //all slices have been seen, all done
-            console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+            //console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
             if(oldpick.length == data.length){
-                console.log("done");
+                //console.log("done");
                 container.on("click", null);
                 return;
             }
@@ -187,7 +187,7 @@
                     oldrotation = rotation;
               
                     /* Get the result value from object "data" */
-                    console.log(data[picked].value)
+                    //console.log(data[picked].value)
               
                     /* Comment the below line for restrict spin to sngle time */
                     container.on("click", spin);
