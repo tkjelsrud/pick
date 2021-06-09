@@ -78,6 +78,8 @@
     window.onload = function(e) { 
       if("q" in urlParams)
       	document.getElementById("labels").value = urlParams["q"];
+      if("t" in urlParams)
+      	document.getElementById("title").innerText = urlParams["t"];
       
       updatePie();
     }
