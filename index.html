@@ -182,6 +182,8 @@
                     //populate question
                     //d3.select("#question h1")
                     //    .text(data[picked].question);
+              		d3.select("#question h1")
+                        .text("Was picked: " + data[picked].label);
                     oldrotation = rotation;
               
                     /* Get the result value from object "data" */
