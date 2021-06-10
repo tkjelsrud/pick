@@ -197,7 +197,9 @@
                     //    .text(data[picked].question);
               		d3.select("#question h1")
                         .text(data[picked].label);
-              		document.getElementById("question").style.display = "block";
+              
+                   toggleEdit(false);
+              
                     oldrotation = rotation;
               
                     /* Get the result value from object "data" */
