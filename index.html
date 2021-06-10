@@ -64,7 +64,7 @@
   <div id="title" contentEditable="true">Title here</div>
   <div id="vList"><div class="text">Enter values (separate by , )</div> <textarea id="labels" onchange="updatePie()">A, B, C</textarea></div>
   <div id="chart"></div>
-  <div id="question" style="display:none"><h1></h1></div>
+  <div id="question" style="display:none"><h1></h1><br\><a class="small" onclick="toggleEdit()">Edit values</a></div>
     
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script type="text/javascript">
@@ -88,6 +88,15 @@
       	document.getElementById("title").innerText = urlParams["t"];
       
       updatePie();
+    }
+    
+    function toggleEdit(onOff) {
+      if(onOff) {
+      	document.getElementById("question").style.display = "block";
+      }
+      else {
+        document.getElementById("question").style.display = "none";
+      }
     }
     
     function updatePie() {
