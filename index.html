@@ -8,7 +8,7 @@
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     text{
-        font-size:11px;
+        font-size:24px;
         pointer-events:none;
     }
     .small {
@@ -163,7 +163,7 @@
         container.on("click", spin);
         function spin(d){
             document.getElementById("vList").style.display = "none";
-            
+            d3.select("#question h1").text("");
             container.on("click", null);
             //all slices have been seen, all done
             //console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
